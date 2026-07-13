@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #0a0e17;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #0a0e17;
+
+  --color-muted: #f4f6fa;
+  --color-muted-foreground: #5b667a;
+
+  --color-border: #e6e9f0;
+  --color-input: #e6e9f0;
+
+  --color-primary: #2b4bff;
+  --color-primary-foreground: #ffffff;
+  --color-primary-hover: #1e39d6;
+
+  --color-accent: #10b981;
+  --color-accent-foreground: #ffffff;
+
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Dark surface tokens for hero / dashboard shell */
+  --color-ink: #0a0e17;
+  --color-ink-soft: #121828;
+  --color-ink-border: #232a3d;
+  --color-ink-muted: #8b95ad;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius: 0.75rem;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Utility: subtle grid background for dark sections */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-grid-light {
+  background-image:
+    linear-gradient(to right, rgba(10, 14, 23, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 14, 23, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
