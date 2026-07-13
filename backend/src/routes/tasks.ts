@@ -106,7 +106,7 @@ router.patch('/:id/toggle', async (req: AuthenticatedRequest, res): Promise<void
         status, 
         completedAt 
       })
-      .where(eq(tasks.id, id))
+      .where(eq(tasks.id, id as string))
       .returning();
 
     if (!updatedTask) {

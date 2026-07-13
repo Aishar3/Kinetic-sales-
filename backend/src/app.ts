@@ -65,6 +65,16 @@ app.use(requestLoggerMiddleware);
 
 // ─── ROUTES ─────────────────────────────────────────────────────
 
+// Root Welcome Endpoint
+app.get('/', (_req, res) => {
+  res.json({
+    message: 'Welcome to the Kinetic Sales System API',
+    status: 'online',
+    healthCheck: '/api/v1/health',
+    version: '0.1.0'
+  });
+});
+
 // Mount all API routes under /api/v1
 app.use('/api/v1', routes);
 

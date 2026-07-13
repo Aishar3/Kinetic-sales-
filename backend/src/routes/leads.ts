@@ -108,7 +108,7 @@ router.patch('/:id/status', async (req: AuthenticatedRequest, res): Promise<void
     const [updatedLead] = await db
       .update(leads)
       .set({ status, updatedAt: new Date() })
-      .where(eq(leads.id, id))
+      .where(eq(leads.id, id as string))
       .returning();
 
     if (!updatedLead) {

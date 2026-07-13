@@ -22,7 +22,7 @@ router.get('/lead/:leadId', async (req: AuthenticatedRequest, res): Promise<void
     const leadInteractions = await db
       .select()
       .from(interactions)
-      .where(eq(interactions.leadId, leadId))
+      .where(eq(interactions.leadId, leadId as string))
       .orderBy(desc(interactions.createdAt));
 
     res.status(200).json(leadInteractions);
