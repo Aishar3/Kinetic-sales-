@@ -22,6 +22,8 @@
 
   --color-warning: #f59e0b;
   --color-danger: #ef4444;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
 
   /* Dark surface tokens for hero / dashboard shell */
   --color-ink: #0a0e17;
@@ -33,6 +35,10 @@
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
   --radius: 0.75rem;
+}
+
+:root {
+  --grid-line: rgba(10, 14, 23, 0.045);
 }
 
 * {
@@ -87,4 +93,29 @@ body {
 
 .animate-marquee {
   animation: marquee 22s linear infinite;
+}
+
+/* Form inputs */
+.auth-input,
+.field-input {
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.auth-input::placeholder,
+.field-input::placeholder {
+  color: var(--color-muted-foreground);
+}
+
+.auth-input:focus,
+.field-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent);
 }
