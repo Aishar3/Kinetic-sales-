@@ -1,13 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, MessageSquare, Linkedin, Send, Sparkles } from "lucide-react"
+import { Mail, MessageSquare, AtSign, Send, Sparkles } from "lucide-react"
 import { conversations, type Conversation } from "@/lib/dashboard-data"
 
 const channelIcon = {
   email: Mail,
   chat: MessageSquare,
-  linkedin: Linkedin,
+  linkedin: AtSign,
 }
 
 export default function InboxPage() {
