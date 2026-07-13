@@ -1,0 +1,38 @@
+# ============================================
+# Kinetic Sales System — Root .gitignore
+# ============================================
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment variables (NEVER commit these)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Temporary / Scratch files
+scratch/
+err.txt
+out.txt
+
